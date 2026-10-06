@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ly Nguyen Khang - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 3D Landing Scene (Kept exactly the same) -->
+    <div id="landing-scene" class="scene-container">
+        <model-viewer 
+            id="rune-model"
+            src="./assets/rune.glb" 
+            alt="3D Floating Rune" 
+            camera-controls 
+            auto-rotate 
+            rotation-per-second="10deg"
+            shadow-intensity="1" 
+            exposure="0.8" 
+            environment-image="neutral">
+            
+            <button class="rune-hotspot" id="enter-btn" slot="hotspot-center" data-position="0 0 0" data-normal="0 0 1">
+                <div class="core-glow"></div>
+                <div class="outer-ring"></div>
+            </button>
+        </model-viewer>
+        <div class="hint-text">Interact to initialize</div>
+    </div>
+
+    <!-- Main Profile Page (Redesigned into an Interactive Bento Grid) -->
+    <div id="profile-page" class="profile-container hidden">
+        <main class="bento-grid" id="bento-container">
+            
+            <!-- Card 1: Main Identity & Bio (Spans wider) -->
+            <section class="bento-card interactive-card identity-card">
+                <div class="glow-blob"></div>
+                <div class="card-content">
+                    <h1 class="glitch-text" data-text="LY NGUYEN KHANG">LY NGUYEN KHANG</h1>
+                    <h3 class="subtitle">Aspiring Data Engineer</h3>
+                    <p class="quote">"If you don't decide the future for yourself, others would"</p>
+                    <div class="bio-text">
+                        <p>Returning to my IT roots at the age of 30 after 4 years of working as an IELTS teacher. My foundation includes IT studies at Bach Khoa University and a Physics Engineering major at Carl von Osietzky Oldenburg University.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card 2: Media Display -->
+            <section class="bento-card interactive-card media-card">
+                <div class="glow-blob"></div>
+                <div class="card-content media-content">
+                    <img src="./assets/avatar.jpg" alt="Profile" class="avatar">
+                    <video id="intro-video" width="100%" controls muted loop preload="none">
+                        <source src="./assets/intro.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+
+            <!-- Card 3: Technical Skills (Intermediate Levels) -->
+            <section class="bento-card interactive-card skills-card">
+                <div class="glow-blob"></div>
+                <div class="card-content">
+                    <h2>Technical Arsenal</h2>
+                    <ul class="skill-list">
+                        <li>
+                            <div class="skill-header"><span>Python</span> <span>Intermediate</span></div>
+                            <div class="bar"><div class="fill" style="width: 60%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="skill-header"><span>SQL & Spark</span> <span>Intermediate</span></div>
+                            <div class="bar"><div class="fill" style="width: 45%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="skill-header"><span>Docker & Airflow</span> <span>Intermediate</span></div>
+                            <div class="bar"><div class="fill" style="width: 40%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="skill-header"><span>English (Academic/Comm)</span> <span>Proficient</span></div>
+                            <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Card 4: Soft Skills & Interests -->
+            <section class="bento-card interactive-card traits-card">
+                <div class="glow-blob"></div>
+                <div class="card-content">
+                    <h2>Soft Skills</h2>
+                    <div class="tags">
+                        <span class="tag">Team Management</span>
+                        <span class="tag">Critical Thinking</span>
+                        <span class="tag">Logical Mindset</span>
+                        <span class="tag">Efficient Seeking</span>
+                    </div>
+                    
+                    <h2 class="mt-2">Interests</h2>
+                    <div class="tags">
+                        <span class="tag outline">Basketball</span>
+                        <span class="tag outline">Travel</span>
+                        <span class="tag outline">Movies</span>
+                        <span class="tag outline">Music</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card 5: Connect & Objectives -->
+            <section class="bento-card interactive-card connect-card">
+                <div class="glow-blob"></div>
+                <div class="card-content">
+                    <h2>Targeted Roles</h2>
+                    <p class="roles">Data Engineering • Data Architect • AI Product Owner</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/khanglynguyen" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+                        <a href="https://facebook.com/khanglynguyen1995" target="_blank" rel="noopener noreferrer" class="social-btn">Facebook</a>
+                        <a href="mailto:iamkhanglhp@gmail.com" target="_blank" rel="noopener noreferrer" class="social-btn">Email Transmission</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
